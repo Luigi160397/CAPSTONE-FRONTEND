@@ -1,10 +1,12 @@
-import { Container } from "react-bootstrap";
+import Jumbo from "./Jumbo";
+import ListFilm from "./ListaFilm";
 
 const Home = () => {
   return (
-    <Container>
-      <h1>HOME</h1>
-    </Container>
+    <>
+      <Jumbo />
+      <ListFilm />
+    </>
   );
 };
 

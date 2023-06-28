@@ -1,0 +1,12 @@
+body {
+  background-color: #212529;
+}
+
+.jumbo {
+  background-image: url("./assets/walle.jpg");
+  background-repeat: no-repeat;
+  background-position: 65%;
+  background-position-y: 30%;
+  height: 500px;
+  background-color: #212529;
+}
