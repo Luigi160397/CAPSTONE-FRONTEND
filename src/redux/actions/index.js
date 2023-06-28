@@ -1,9 +1,9 @@
 export const GET_FILMS = "GET_FILMS";
 export const GET_USER_LOGGED = "GET_USER_LOGGED";
 
-export const getFilmsAction = () => {
+export const getFilmsAction = url => {
   const token = localStorage.getItem("token");
-  const url = "http://localhost:3001/films";
+
   return async dispatch => {
     try {
       let resp = await fetch(url, {

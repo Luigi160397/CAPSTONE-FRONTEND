@@ -6,9 +6,10 @@ import { getFilmsAction } from "../redux/actions";
 
 const ListFilm = () => {
   const dispatch = useDispatch();
+  const url = `http://localhost:3001/films?nome=`;
 
   useEffect(() => {
-    dispatch(getFilmsAction());
+    dispatch(getFilmsAction(url));
   }, []);
 
   const films = useSelector(state => state.home.films);
