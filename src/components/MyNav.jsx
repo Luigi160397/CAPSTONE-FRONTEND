@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, DropdownButton, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useSelector } from "react-redux";
@@ -17,13 +17,24 @@ const MyNav = () => {
 
         <Nav className="me-auto">
           {location.pathname !== "/login" && location.pathname !== "/register" && (
-            <Link className="nav-link text-white" to={"/home"}>
+            <Link className="nav-link text-white" to={"/"}>
               Home
             </Link>
           )}
         </Nav>
         {location.pathname !== "/login" && location.pathname !== "/register" && (
-          <Navbar.Text>Signed in as: {user !== null && <Link to="/login">{user.nome}</Link>}</Navbar.Text>
+          <>
+            {user !== null && (
+              <DropdownButton className="border-0" id="drop-nav" title={user.nome}>
+                <Link className="dropdown-item" to="/login">
+                  Cambia Utente
+                </Link>
+                <Link className="dropdown-item" to="/register">
+                  Registra nuovo Utente
+                </Link>
+              </DropdownButton>
+            )}
+          </>
         )}
         {location.pathname === "/login" && (
           <Link className="nav-link text-white" to={"/register"}>

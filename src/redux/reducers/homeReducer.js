@@ -1,8 +1,10 @@
-import { GET_FILMS, GET_USER_LOGGED } from "../actions";
+import { GET_COMMENTI, GET_DETTAGLIO, GET_FILMS, GET_USER_LOGGED } from "../actions";
 
 const initialState = {
   films: [],
-  user: null
+  user: null,
+  film: null,
+  commenti: []
 };
 
 const homeReducer = (state = initialState, action) => {
@@ -16,6 +18,16 @@ const homeReducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload
+      };
+    case GET_DETTAGLIO:
+      return {
+        ...state,
+        film: action.payload
+      };
+    case GET_COMMENTI:
+      return {
+        ...state,
+        commenti: action.payload
       };
     default:
       return state;

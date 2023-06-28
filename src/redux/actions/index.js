@@ -1,5 +1,7 @@
 export const GET_FILMS = "GET_FILMS";
 export const GET_USER_LOGGED = "GET_USER_LOGGED";
+export const GET_DETTAGLIO = "GET_DETTAGLIO";
+export const GET_COMMENTI = "GET_COMMENTI";
 
 export const getFilmsAction = url => {
   const token = localStorage.getItem("token");
@@ -37,6 +39,48 @@ export const getUserLoggedAction = () => {
         let data = await resp.json();
 
         dispatch({ type: GET_USER_LOGGED, payload: data });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getDettagioAction = url => {
+  const token = localStorage.getItem("token");
+
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      if (resp.ok) {
+        let film = await resp.json();
+
+        dispatch({ type: GET_DETTAGLIO, payload: film });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getCommentiAction = url => {
+  const token = localStorage.getItem("token");
+
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      if (resp.ok) {
+        let commenti = await resp.json();
+
+        dispatch({ type: GET_COMMENTI, payload: commenti });
       }
     } catch (error) {
       console.log(error);
