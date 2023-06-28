@@ -46,6 +46,11 @@ const CommentArea = ({ params }) => {
         <>
           <h5 className="display-6 text-white">Commenti:</h5>
           <ListGroup className="mt-3">
+            {comments.map(comment => (
+              <ListGroup.Item className="bg-black text-white" key={comment.id}>
+                <SingleComment comment={comment} />
+              </ListGroup.Item>
+            ))}
             <ListGroup.Item className="bg-black text-white">
               <Form onSubmit={sendCommento} className="d">
                 <Form.Control
@@ -58,11 +63,6 @@ const CommentArea = ({ params }) => {
                 />
               </Form>
             </ListGroup.Item>
-            {comments.map(comment => (
-              <ListGroup.Item className="bg-black text-white" key={comment.id}>
-                <SingleComment comment={comment} />
-              </ListGroup.Item>
-            ))}
           </ListGroup>
         </>
       ) : (

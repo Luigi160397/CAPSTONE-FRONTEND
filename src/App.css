@@ -19,3 +19,7 @@ body {
 .placeholder-white::placeholder {
   color: white;
 }
+
+.badge-ratings {
+  background-color: #3f51b5 !important;
+}

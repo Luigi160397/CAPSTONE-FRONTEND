@@ -8,6 +8,7 @@ import Preferiti from "./components/Preferiti";
 import MyNav from "./components/MyNav";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import MyFooter from "./components/MyFooter";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/films/:idFilm" element={<Detail />} />
           <Route path="/:idUtente/preferiti" element={<Preferiti />} />
         </Routes>
+        <MyFooter />
       </BrowserRouter>
     </div>
   );

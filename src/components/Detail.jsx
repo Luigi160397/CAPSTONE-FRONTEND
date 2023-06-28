@@ -29,10 +29,7 @@ const Detail = () => {
                 <p>{film.categoria}</p>
                 <p>{film.durata}</p>
                 <p>
-                  Ratings:{" "}
-                  <Badge bg="danger" className="me-1">
-                    {film.voto}
-                  </Badge>
+                  Ratings: <Badge className="me-1 badge-ratings">{film.voto}</Badge>
                 </p>
                 <p>{film.descrizione}</p>
               </Col>
