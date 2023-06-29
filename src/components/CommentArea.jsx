@@ -48,7 +48,7 @@ const CommentArea = ({ params }) => {
           <ListGroup className="mt-3" style={{ boxShadow: "0px 0px 13px 0px #ffffff" }}>
             {comments.map(comment => (
               <ListGroup.Item className="bg-black text-white" key={comment.id}>
-                <SingleComment comment={comment} />
+                <SingleComment comment={comment} params={params} />
               </ListGroup.Item>
             ))}
             <ListGroup.Item className="bg-black text-white">

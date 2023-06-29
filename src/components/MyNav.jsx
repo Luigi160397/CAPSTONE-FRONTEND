@@ -2,6 +2,7 @@ import { Container, DropdownButton, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useSelector } from "react-redux";
+import { FaRegUser } from "react-icons/fa";
 
 const MyNav = () => {
   const location = useLocation();
@@ -25,7 +26,15 @@ const MyNav = () => {
         {location.pathname !== "/login" && location.pathname !== "/register" && (
           <>
             {user !== null && (
-              <DropdownButton className="border-0" id="drop-nav" title={user.nome}>
+              <DropdownButton
+                className="border-0"
+                id="drop-nav"
+                title={
+                  <>
+                    <FaRegUser /> {user.nome}
+                  </>
+                }
+              >
                 <Link className="dropdown-item" to="/login">
                   Cambia Utente
                 </Link>

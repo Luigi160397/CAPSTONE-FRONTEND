@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Container, Form } from "react-bootstrap";
+import { Alert, Button, Container, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getUserLoggedAction } from "../redux/actions";
@@ -9,6 +9,9 @@ const Login = () => {
     username: "",
     password: ""
   });
+
+  const [error, setError] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
@@ -38,22 +41,22 @@ const Login = () => {
         navigate("/");
       }
     } catch (error) {
-      alert(error);
+      setError(error);
+      setErrorMessage("Credenziali errate, ritenta!");
     }
   };
   return (
     <Container className="text-light d-flex justify-content-center align-items-center">
-      <Form
-        style={{
-          border: "3px solid #3f51b5 !important",
-          backgroundColor: "black"
-        }}
-        className=" rounded p-5 mt-5"
-        onSubmit={sendLogin}
-      >
+      {error && (
+        <Alert variant="danger" onClose={() => setError(null)} dismissible>
+          {errorMessage}
+        </Alert>
+      )}
+      <Form className=" rounded p-5 mt-5 form-login" onSubmit={sendLogin}>
         <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
           <Form.Control
+            required
             type="text"
             placeholder="Inserisci il tuo username"
             value={login.username}
@@ -63,6 +66,7 @@ const Login = () => {
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            required
             type="password"
             placeholder="Inserisci la tua password"
             value={login.password}

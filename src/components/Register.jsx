@@ -42,17 +42,11 @@ const Register = () => {
   };
   return (
     <Container className="text-light d-flex justify-content-center align-items-center">
-      <Form
-        style={{
-          border: "3px solid #3f51b5 !important",
-          backgroundColor: "black"
-        }}
-        className=" rounded p-5 mt-5"
-        onSubmit={sendRegister}
-      >
+      <Form className=" rounded p-5 mt-5 form-register" onSubmit={sendRegister}>
         <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
           <Form.Control
+            required
             type="text"
             placeholder="Inserisci il tuo username"
             value={register.username}
@@ -62,6 +56,7 @@ const Register = () => {
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
           <Form.Control
+            required
             type="email"
             placeholder="Inserisci la tua email"
             value={register.email}
@@ -71,6 +66,7 @@ const Register = () => {
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            required
             type="password"
             placeholder="Inserisci la tua password"
             value={register.password}
@@ -80,6 +76,7 @@ const Register = () => {
         <Form.Group className="mb-3">
           <Form.Label>Nome</Form.Label>
           <Form.Control
+            required
             type="text"
             placeholder="Inserisci il tuo nome"
             value={register.nome}
@@ -89,6 +86,7 @@ const Register = () => {
         <Form.Group className="mb-3">
           <Form.Label>Cognome</Form.Label>
           <Form.Control
+            required
             type="text"
             placeholder="Inserisci il tuo cognome"
             value={register.cognome}
