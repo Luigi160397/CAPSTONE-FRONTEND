@@ -29,3 +29,19 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0px 0px 13px 0px #ffffff;
 }
+
+.input-ricerca {
+  background: rgba(255, 255, 255, 0.162);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 5px 0px #ffffff;
+}
+.input-ricerca:focus {
+  background: rgba(255, 255, 255, 0.162);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 5px 0px #ffffff;
+  color: #ffffff;
+}
+
+.input-ricerca::placeholder {
+  color: rgba(255, 255, 255, 0.675);
+}
