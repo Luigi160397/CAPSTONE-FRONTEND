@@ -44,6 +44,7 @@ body {
   color: #ffffff;
 }
 
-.input-ricerca::placeholder {
+.input-ricerca::placeholder,
+.input-login::placeholder {
   color: rgba(255, 255, 255, 0.675);
 }

@@ -48,6 +48,7 @@ const Register = () => {
           <Form.Control
             required
             type="text"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci il tuo username"
             value={register.username}
             onChange={e => setRegister({ ...register, username: e.target.value })}
@@ -58,6 +59,7 @@ const Register = () => {
           <Form.Control
             required
             type="email"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci la tua email"
             value={register.email}
             onChange={e => setRegister({ ...register, email: e.target.value })}
@@ -68,6 +70,7 @@ const Register = () => {
           <Form.Control
             required
             type="password"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci la tua password"
             value={register.password}
             onChange={e => setRegister({ ...register, password: e.target.value })}
@@ -78,6 +81,7 @@ const Register = () => {
           <Form.Control
             required
             type="text"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci il tuo nome"
             value={register.nome}
             onChange={e => setRegister({ ...register, nome: e.target.value })}
@@ -88,6 +92,7 @@ const Register = () => {
           <Form.Control
             required
             type="text"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci il tuo cognome"
             value={register.cognome}
             onChange={e => setRegister({ ...register, cognome: e.target.value })}

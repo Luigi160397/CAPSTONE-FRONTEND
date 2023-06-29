@@ -58,6 +58,7 @@ const Login = () => {
           <Form.Control
             required
             type="text"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci il tuo username"
             value={login.username}
             onChange={e => setLogin({ ...login, username: e.target.value })}
@@ -68,6 +69,7 @@ const Login = () => {
           <Form.Control
             required
             type="password"
+            className="bg-dark text-light input-login"
             placeholder="Inserisci la tua password"
             value={login.password}
             onChange={e => setLogin({ ...login, password: e.target.value })}
