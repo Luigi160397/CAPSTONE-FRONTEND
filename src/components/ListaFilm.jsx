@@ -20,7 +20,7 @@ const ListFilm = () => {
     <Container className="my-4">
       {user !== null ? (
         <>
-          <Form>
+          <Form onSubmit={e => e.preventDefault()}>
             <Form.Group className="mb-3">
               <Form.Label className="text-light fs-3">Cerca tra i nostri film:</Form.Label>
               <Form.Control
