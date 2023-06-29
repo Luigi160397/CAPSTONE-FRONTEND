@@ -13,7 +13,7 @@ const Film = ({ film }) => {
       <Card.Img
         width="200px"
         height="400px"
-        className="image-fluid"
+        className="image-fluid rounded-2"
         style={{ objectFit: "cover" }}
         variant="top"
         src={film.urlCopertina}
