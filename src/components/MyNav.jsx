@@ -41,6 +41,10 @@ const MyNav = () => {
                 <Link className="dropdown-item" to="/register">
                   Registra nuovo Utente
                 </Link>
+
+                <Link className="dropdown-item" to={`/${user.id}/preferiti`}>
+                  Lista preferiti
+                </Link>
               </DropdownButton>
             )}
           </>

@@ -2,6 +2,7 @@ export const GET_FILMS = "GET_FILMS";
 export const GET_USER_LOGGED = "GET_USER_LOGGED";
 export const GET_DETTAGLIO = "GET_DETTAGLIO";
 export const GET_COMMENTI = "GET_COMMENTI";
+export const GET_PREFERITI = "GET_PREFERITI";
 
 export const getFilmsAction = url => {
   const token = localStorage.getItem("token");
@@ -81,6 +82,27 @@ export const getCommentiAction = url => {
         let commenti = await resp.json();
 
         dispatch({ type: GET_COMMENTI, payload: commenti });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getPreferitiAction = () => {
+  const token = localStorage.getItem("token");
+  const url = "http://localhost:3001/users/me/preferiti";
+  return async dispatch => {
+    try {
+      let resp = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      if (resp.ok) {
+        let data = await resp.json();
+
+        dispatch({ type: GET_PREFERITI, payload: data });
       }
     } catch (error) {
       console.log(error);
