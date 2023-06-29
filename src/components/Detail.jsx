@@ -98,7 +98,7 @@ const Detail = () => {
                         border: "0"
                       }}
                     >
-                      <FaStar />
+                      <FaStar className="stelle" />
                     </Button>
                   ) : (
                     <Button
@@ -113,7 +113,7 @@ const Detail = () => {
                         border: "0"
                       }}
                     >
-                      <FaRegStar />
+                      <FaRegStar className="stelle" />
                     </Button>
                   )}
                 </Col>

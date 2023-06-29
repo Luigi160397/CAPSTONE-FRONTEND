@@ -5,10 +5,11 @@ const Film = ({ film }) => {
   const navigate = useNavigate();
   return (
     <Card
+      className="film-card"
       onClick={() => {
         navigate(`/films/${film.id}`);
       }}
-      style={{ cursor: "pointer", boxShadow: "0px 0px 5px 0px #ffffff " }}
+      style={{ cursor: "pointer" }}
     >
       <Card.Img
         width="200px"

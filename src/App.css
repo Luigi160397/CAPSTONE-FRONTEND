@@ -48,3 +48,22 @@ body {
 .input-login::placeholder {
   color: rgba(255, 255, 255, 0.675);
 }
+
+.film-card {
+  box-shadow: 0px 0px 5px 0px #ffffff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.film-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 9px 0px #ffffff;
+  position: relative;
+}
+
+.stelle {
+  transition: transform 0.2s ease-in-out;
+}
+
+.stelle:hover {
+  transform: scale(1.1);
+}
