@@ -48,22 +48,22 @@ const MyFooter = () => {
                 </svg>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Audio and Subtitles
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Media Center
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Privacy
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Contact Us
                 </a>
               </li>
@@ -71,7 +71,7 @@ const MyFooter = () => {
                 <button className="btn btn-outline-secondary">Service Code</button>
               </li>
               <li className="nav-item mt-2">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   © 2023 FilmVerse Inc
                 </a>
               </li>
@@ -80,17 +80,17 @@ const MyFooter = () => {
           <div className="col-md-3">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Audio Description
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Investor Relations
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Legal Notices
                 </a>
               </li>
@@ -99,17 +99,17 @@ const MyFooter = () => {
           <div className="col-md-3">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Help Center
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Jobs
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Cookie Preferences
                 </a>
               </li>
@@ -118,17 +118,17 @@ const MyFooter = () => {
           <div className="col-md-3">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Gift Cards
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Terms Of Use
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-light" href="#i">
+                <a className="nav-link" style={{ color: "gray" }} href="#i">
                   Corporate Information
                 </a>
               </li>
