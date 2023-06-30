@@ -49,7 +49,7 @@ const EditFilmModal = ({ showEdit, handleCloseEdit }) => {
   return (
     <Modal show={showEdit} onHide={handleCloseEdit} className="text-white form-login">
       <Modal.Header className="bg-dark text-white" closeButton>
-        <Modal.Title>Aggiungi film</Modal.Title>
+        <Modal.Title>Modifica film</Modal.Title>
       </Modal.Header>
       <Modal.Body className="bg-dark">
         {film !== null && (
