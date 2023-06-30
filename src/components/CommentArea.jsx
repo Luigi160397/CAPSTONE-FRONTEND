@@ -66,7 +66,23 @@ const CommentArea = ({ params }) => {
           </ListGroup>
         </>
       ) : (
-        <h5 className="text-center">Non ci sono commenti per questo film.</h5>
+        <>
+          <h5 className="text-center">Non ci sono commenti per questo film.</h5>
+          <ListGroup className="mt-3" style={{ boxShadow: "0px 0px 13px 0px #ffffff" }}>
+            <ListGroup.Item className="bg-black text-white">
+              <Form onSubmit={sendCommento} className="d">
+                <Form.Control
+                  className="bg-dark text-light placeholder-white"
+                  type="text"
+                  rows={2}
+                  placeholder="Aggiungi un commento..."
+                  value={commento.contenuto}
+                  onChange={e => setCommento({ ...commento, contenuto: e.target.value })}
+                />
+              </Form>
+            </ListGroup.Item>
+          </ListGroup>
+        </>
       )}
     </>
   );

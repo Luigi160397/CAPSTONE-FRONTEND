@@ -8,10 +8,10 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Detail = () => {
   const params = useParams();
-  const url = `http://localhost:3001/films/${params.idFilm}`;
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const url = `http://localhost:3001/films/${params.idFilm}`;
     dispatch(getDettagioAction(url));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -20,9 +20,9 @@ const Detail = () => {
   const film = useSelector(state => state.home.film);
   const preferiti = useSelector(state => state.home.preferiti);
 
-  const isPreferito = preferiti.length > 0 && preferiti.find(favourite => favourite.id === film.id);
+  const isPreferito = preferiti.length > 0 && preferiti.find(favourite => favourite.id === params.idFilm);
 
-  const filmPref = { idFilm: film.id };
+  const filmPref = { idFilm: params.idFilm };
 
   const token = localStorage.getItem("token");
   const addPreferito = async () => {

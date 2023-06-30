@@ -9,6 +9,7 @@ import MyNav from "./components/MyNav";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import MyFooter from "./components/MyFooter";
+import AdminPage from "./components/AdminPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/films/:idFilm" element={<Detail />} />
           <Route path="/:idUtente/preferiti" element={<Preferiti />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
         <MyFooter />
       </BrowserRouter>

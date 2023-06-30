@@ -45,6 +45,11 @@ const MyNav = () => {
                 <Link className="dropdown-item" to={`/${user.id}/preferiti`}>
                   Lista preferiti
                 </Link>
+                {user.role !== null && user.role === "ADMIN" && (
+                  <Link className="dropdown-item" to={`/admin`}>
+                    Back-office
+                  </Link>
+                )}
               </DropdownButton>
             )}
           </>
