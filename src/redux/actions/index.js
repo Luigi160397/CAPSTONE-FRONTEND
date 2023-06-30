@@ -3,6 +3,9 @@ export const GET_USER_LOGGED = "GET_USER_LOGGED";
 export const GET_DETTAGLIO = "GET_DETTAGLIO";
 export const GET_COMMENTI = "GET_COMMENTI";
 export const GET_PREFERITI = "GET_PREFERITI";
+export const GET_FILM_DA_MODIFICARE = "GET_FILM_DA_MODIFICARE";
+
+export const getFilmDaModificareAction = film => ({ type: GET_FILM_DA_MODIFICARE, payload: film });
 
 export const getFilmsAction = url => {
   const token = localStorage.getItem("token");

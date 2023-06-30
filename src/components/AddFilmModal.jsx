@@ -58,6 +58,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="nome">
             <Form.Label>Nome film</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               placeholder="Es: Harry Potter"
               autoFocus
@@ -69,6 +70,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="urlCopertina">
             <Form.Label>Url copertina</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               placeholder="Es: http://www..."
               autoFocus
@@ -80,6 +82,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="categoria">
             <Form.Label>Categoria</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               as="select"
               value={film.categoria}
               onChange={e => setFilm({ ...film, categoria: e.target.value })}
@@ -97,6 +100,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="descrizione">
             <Form.Label>Descrizione</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               as="textarea"
               rows={3}
               placeholder="Es: Il film diretto da..."
@@ -109,6 +113,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="voto">
             <Form.Label>Voto</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               autoFocus
               placeholder="Es: 2/5"
@@ -121,6 +126,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="durata">
             <Form.Label>Durata</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               placeholder="Es: 1h 49m"
               required
@@ -132,6 +138,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="annoUscita">
             <Form.Label>Anno di uscita</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               placeholder="Es: 2012"
               required
@@ -143,6 +150,7 @@ const AddFilmModal = ({ show, handleClose }) => {
           <Form.Group className="mb-3" controlId="urlTrailer">
             <Form.Label>Url trailer</Form.Label>
             <Form.Control
+              className="bg-dark text-light input-login"
               type="text"
               placeholder="Es: http://www.youtube..."
               required
@@ -151,7 +159,14 @@ const AddFilmModal = ({ show, handleClose }) => {
               onChange={e => setFilm({ ...film, urlTrailer: e.target.value })}
             />
           </Form.Group>
-          <Button className="me-auto" variant="primary" type="submit">
+          <Button
+            className="me-auto"
+            style={{
+              backgroundColor: "#3f51b5",
+              border: "0"
+            }}
+            type="submit"
+          >
             Salva
           </Button>
         </Form>

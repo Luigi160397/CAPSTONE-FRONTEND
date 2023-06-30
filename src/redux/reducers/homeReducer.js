@@ -1,11 +1,19 @@
-import { GET_COMMENTI, GET_DETTAGLIO, GET_FILMS, GET_PREFERITI, GET_USER_LOGGED } from "../actions";
+import {
+  GET_COMMENTI,
+  GET_DETTAGLIO,
+  GET_FILMS,
+  GET_FILM_DA_MODIFICARE,
+  GET_PREFERITI,
+  GET_USER_LOGGED
+} from "../actions";
 
 const initialState = {
   films: [],
   user: null,
   film: null,
   commenti: [],
-  preferiti: []
+  preferiti: [],
+  filmEdit: null
 };
 
 const homeReducer = (state = initialState, action) => {
@@ -34,6 +42,11 @@ const homeReducer = (state = initialState, action) => {
       return {
         ...state,
         preferiti: action.payload
+      };
+    case GET_FILM_DA_MODIFICARE:
+      return {
+        ...state,
+        filmEdit: action.payload
       };
     default:
       return state;

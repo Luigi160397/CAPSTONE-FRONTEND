@@ -2,9 +2,9 @@ import { Button } from "react-bootstrap";
 import { FaPen } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
 import { useDispatch } from "react-redux";
-import { getFilmsAction } from "../redux/actions";
+import { getFilmDaModificareAction, getFilmsAction } from "../redux/actions";
 
-const SingoloFilmAdmin = ({ film }) => {
+const SingoloFilmAdmin = ({ film, handleShowEdit }) => {
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
@@ -32,7 +32,14 @@ const SingoloFilmAdmin = ({ film }) => {
         <Button onClick={handleDelete} type="button" variant="danger" className="text-white me-3">
           <ImBin />
         </Button>
-        <Button type="button" variant="outline-secondary">
+        <Button
+          onClick={() => {
+            dispatch(getFilmDaModificareAction(film));
+            handleShowEdit();
+          }}
+          type="button"
+          variant="outline-secondary"
+        >
           <FaPen />
         </Button>
       </div>
