@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Modal } from "react-bootstrap";
 import { ImBin } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
 import { getCommentiAction } from "../redux/actions";
@@ -12,6 +12,7 @@ const SingleComment = ({ comment, params }) => {
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
   const [editedContent, setEditedContent] = useState(comment.contenuto);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   const handleDelete = async () => {
     const token = localStorage.getItem("token");
@@ -53,6 +54,19 @@ const SingleComment = ({ comment, params }) => {
     }
   };
 
+  const handleCloseConfirmationModal = () => {
+    setShowConfirmationModal(false);
+  };
+
+  const handleShowConfirmationModal = () => {
+    setShowConfirmationModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    handleDelete();
+    setShowConfirmationModal(false);
+  };
+
   return (
     <Row>
       <Col className="text-truncate" xs={12}>
@@ -82,7 +96,7 @@ const SingleComment = ({ comment, params }) => {
           })}
         {user !== null && user.id !== null && user.id === comment.user.id && (
           <>
-            <Button type="button" variant="danger" className="text-white ms-3" onClick={handleDelete}>
+            <Button type="button" variant="danger" className="text-white ms-3" onClick={handleShowConfirmationModal}>
               <ImBin />
             </Button>
             {editMode ? (
@@ -97,6 +111,22 @@ const SingleComment = ({ comment, params }) => {
           </>
         )}
       </Col>
+
+      {/* Modale di conferma eliminazione */}
+      <Modal show={showConfirmationModal} onHide={handleCloseConfirmationModal} className="text-white form-login">
+        <Modal.Header closeButton className="bg-dark text-white">
+          <Modal.Title>Conferma eliminazione</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bg-dark text-white">Sei sicuro di voler eliminare questo commento?</Modal.Body>
+        <Modal.Footer className="bg-dark text-white">
+          <Button variant="secondary" onClick={handleCloseConfirmationModal}>
+            Annulla
+          </Button>
+          <Button variant="danger" onClick={handleConfirmDelete}>
+            Elimina
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Row>
   );
 };
