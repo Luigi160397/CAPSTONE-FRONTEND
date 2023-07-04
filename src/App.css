@@ -67,3 +67,7 @@ body {
 .stelle:hover {
   transform: scale(1.1);
 }
+
+.dropdown-menu {
+  left: -110% !important;
+}
