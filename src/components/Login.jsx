@@ -39,19 +39,16 @@ const Login = () => {
         });
         dispatch(getUserLoggedAction());
         navigate("/");
+      } else {
+        throw new Error("Credenziali non valide! Ritenta!");
       }
     } catch (error) {
       setError(error);
-      setErrorMessage("Credenziali errate, ritenta!");
+      setErrorMessage(error.message);
     }
   };
   return (
     <Container className="text-light d-flex justify-content-center align-items-center">
-      {error && (
-        <Alert variant="danger" onClose={() => setError(null)} dismissible>
-          {errorMessage}
-        </Alert>
-      )}
       <Form className=" rounded p-5 mt-5 form-login" onSubmit={sendLogin}>
         <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
@@ -86,6 +83,11 @@ const Login = () => {
             Entra
           </Button>
         </div>
+        {error && (
+          <Alert className="mt-3" variant="danger" onClose={() => setError(null)} dismissible>
+            {errorMessage}
+          </Alert>
+        )}
       </Form>
     </Container>
   );
