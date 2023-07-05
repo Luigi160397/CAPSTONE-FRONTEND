@@ -51,13 +51,22 @@ body {
 
 .film-card {
   box-shadow: 0px 0px 5px 0px #ffffff;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .film-card:hover {
   transform: scale(1.05);
   box-shadow: 0px 0px 9px 0px #ffffff;
   position: relative;
+}
+
+.film-wrapper {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.film-wrapper:hover {
+  opacity: 1;
 }
 
 .stelle {

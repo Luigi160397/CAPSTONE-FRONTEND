@@ -1,25 +1,57 @@
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import ReactPlayer from "react-player";
 
 const Film = ({ film }) => {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleCardClick = () => {
+    navigate(`/films/${film.id}`);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <Card
       className="film-card"
-      onClick={() => {
-        navigate(`/films/${film.id}`);
-      }}
+      onClick={handleCardClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       style={{ cursor: "pointer" }}
     >
-      <Card.Img
-        width="200px"
-        height="400px"
-        className="image-fluid rounded-2"
-        style={{ objectFit: "cover" }}
-        variant="top"
-        src={film.urlCopertina}
-      />
+      {isHovered ? (
+        <div className="rounded-2" style={{ width: "303px", height: "400px", position: "relative" }}>
+          <ReactPlayer
+            url={film.urlTrailer}
+            width="100%"
+            height="100%"
+            playing
+            className="film-wrapper"
+            controls={false}
+            muted={true}
+            onPause={handleCardClick}
+          />
+        </div>
+      ) : (
+        <Card.Img
+          width="200px"
+          height="400px"
+          className="image-fluid rounded-2"
+          style={{ objectFit: "cover" }}
+          variant="top"
+          src={film.urlCopertina}
+        />
+      )}
     </Card>
   );
 };
+
 export default Film;
