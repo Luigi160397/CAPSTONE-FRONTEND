@@ -32,7 +32,7 @@ const ListFilm = () => {
               />
             </Form.Group>
           </Form>
-          <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
+          <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-4">
             <>
               {films.map(film => (
                 <Col key={film.id}>
