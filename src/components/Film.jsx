@@ -1,21 +1,26 @@
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ReactPlayer from "react-player";
 
 const Film = ({ film }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+  const timeoutRef = useRef(null);
 
   const handleCardClick = () => {
+    clearTimeout(timeoutRef.current);
     navigate(`/films/${film.id}`);
   };
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
+    timeoutRef.current = setTimeout(() => {
+      setIsHovered(true);
+    }, 1500);
   };
 
   const handleMouseLeave = () => {
+    clearTimeout(timeoutRef.current);
     setIsHovered(false);
   };
 
