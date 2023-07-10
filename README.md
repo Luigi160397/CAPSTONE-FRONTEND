@@ -28,8 +28,9 @@ Siamo sempre alla ricerca di nuove funzionalità, miglioramenti dell'interfaccia
 
 Sono felice di ricevere feedback, suggerimenti e domande su FilmVerse. Non esitare a contattarmi se hai bisogno di assistenza o se desideri condividere le tue idee!
 
-📧 Email: luigi.difraia.97@gmail.com
-👥 LinkedIn: [Luigi Di Fraia su LinkedIn](https://www.linkedin.com/in/luigi-di-fraia-juniorfullstackdeveloper/)
-🐙 GitHub: [Luigi Di Fraia su GitHub](https://github.com/Luigi160397)
+-📧 Email: luigi.difraia.97@gmail.com
+-👥 LinkedIn: [Luigi Di Fraia su LinkedIn](https://www.linkedin.com/in/luigi-di-fraia-juniorfullstackdeveloper/)
+-🐙 GitHub: [Luigi Di Fraia su GitHub](https://github.com/Luigi160397)
+-📒 Portfolio: [Portfolio](https://portfolio-luigi-di-fraia.vercel.app/)
 
 Unisciti a me in questa avventura cinematografica e scopri il magico mondo del cinema su FilmVerse! 🌟🎥✨
