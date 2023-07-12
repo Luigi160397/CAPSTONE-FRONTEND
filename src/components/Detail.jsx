@@ -71,7 +71,7 @@ const Detail = () => {
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <Row className="justify-content-center gy-5">
             <Col md={8} className="order-2 order-md-1">
