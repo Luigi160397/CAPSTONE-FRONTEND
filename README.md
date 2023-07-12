@@ -1,5 +1,7 @@
 # FilmVerse - Sito di recensioni cinematografiche
 
+![FilmVerse](https://github.com/Luigi160397/CAPSTONE-FRONTEND/assets/123403688/96558805-9f0f-4127-8d58-346035369192)
+
 Benvenuti su FilmVerse, l'esperienza definitiva per gli amanti del cinema! 🎬🍿
 
 ## Descrizione del progetto
