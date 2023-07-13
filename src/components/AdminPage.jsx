@@ -25,10 +25,7 @@ const AdminPage = () => {
           onClick={() => {
             handleShow();
           }}
-          className="border-0 fs-4"
-          style={{
-            backgroundColor: "#3f51b5"
-          }}
+          className="border-0 fs-4 bottoni"
         >
           <FaPlus />
         </Button>

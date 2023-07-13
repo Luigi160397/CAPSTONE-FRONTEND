@@ -159,14 +159,7 @@ const AddFilmModal = ({ show, handleClose }) => {
               onChange={e => setFilm({ ...film, urlTrailer: e.target.value })}
             />
           </Form.Group>
-          <Button
-            className="me-auto"
-            style={{
-              backgroundColor: "#3f51b5",
-              border: "0"
-            }}
-            type="submit"
-          >
+          <Button className="me-auto bottoni" type="submit">
             Salva
           </Button>
         </Form>

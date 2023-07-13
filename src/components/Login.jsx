@@ -80,13 +80,7 @@ const Login = () => {
             />
           </Form.Group>
           <div className="d-flex justify-content-end">
-            <Button
-              className="border-0"
-              style={{
-                backgroundColor: "#3f51b5"
-              }}
-              type="submit"
-            >
+            <Button className="border-0 bottoni" type="submit">
               Entra
             </Button>
           </div>

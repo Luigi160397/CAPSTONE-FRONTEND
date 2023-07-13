@@ -11,9 +11,18 @@ body {
   background-color: #212529;
 }
 
-#drop-nav {
+#drop-nav,
+.bottoni {
   background-color: #3f51b5;
   border: 0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#drop-nav:hover,
+#drop-nav:focus,
+.bottoni:hover,
+.bottoni:focus {
+  background-color: #6172d1;
 }
 
 .placeholder-white::placeholder {

@@ -48,7 +48,7 @@ const FilmPreferito = ({ film }) => {
         <ImCross />
       </Button>
       <Button
-        className="bottone-more"
+        className="bottone-more bottoni"
         type="button"
         onClick={() => {
           navigate(`/films/${film.id}`);
@@ -56,9 +56,7 @@ const FilmPreferito = ({ film }) => {
         style={{
           position: "absolute",
           bottom: "10px",
-          right: "10px",
-          backgroundColor: "#3f51b5",
-          border: "0"
+          right: "10px"
         }}
       >
         More...
