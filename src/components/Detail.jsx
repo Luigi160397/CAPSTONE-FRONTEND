@@ -127,13 +127,16 @@ const Detail = () => {
               </Row>
             </Col>
             <Col md={4} className="order-1 order-md-2 d-flex justify-content-center">
-              <img
-                src={film.urlCopertina}
-                alt={film.nome}
-                width={400}
-                height={800}
-                style={{ objectFit: "cover", boxShadow: "0px 0px 13px 0px #ffffff " }}
-              />
+              <div style={{ maxWidth: "400px" }}>
+                <img
+                  src={film.urlCopertina}
+                  alt={film.nome}
+                  width={400}
+                  height={800}
+                  style={{ objectFit: "cover", boxShadow: "0px 0px 13px 0px #ffffff " }}
+                  className="img-fluid"
+                />
+              </div>
             </Col>
           </Row>
         </>
