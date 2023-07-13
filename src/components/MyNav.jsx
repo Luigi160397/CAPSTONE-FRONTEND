@@ -12,6 +12,7 @@ const MyNav = () => {
     <Navbar className="sticky-top" bg="dark" data-bs-theme="dark">
       <Container>
         <div
+          style={{ cursor: "pointer" }}
           className="navbar-brand text-white"
           onClick={() => {
             navigate("/");
