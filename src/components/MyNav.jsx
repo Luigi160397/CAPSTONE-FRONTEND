@@ -1,17 +1,22 @@
 import { Container, DropdownButton, Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useSelector } from "react-redux";
 import { FaRegUser } from "react-icons/fa";
 
 const MyNav = () => {
   const location = useLocation();
-
+  const navigate = useNavigate();
   const user = useSelector(state => state.home.user);
   return (
     <Navbar className="sticky-top" bg="dark" data-bs-theme="dark">
       <Container>
-        <div className="navbar-brand text-white">
+        <div
+          className="navbar-brand text-white"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           <img className="me-1" width="30px" height="30px" src={logo} alt="logo" />
           FilmVerse
         </div>
@@ -25,7 +30,7 @@ const MyNav = () => {
         </Nav>
         {location.pathname !== "/login" && location.pathname !== "/register" && (
           <>
-            {user !== null && (
+            {user !== null ? (
               <DropdownButton
                 className="border-0"
                 id="drop-nav"
@@ -51,6 +56,10 @@ const MyNav = () => {
                   </Link>
                 )}
               </DropdownButton>
+            ) : (
+              <Link className="nav-link text-white" to={"/login"}>
+                Login
+              </Link>
             )}
           </>
         )}
