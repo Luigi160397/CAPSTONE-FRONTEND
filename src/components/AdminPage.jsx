@@ -1,12 +1,19 @@
 import { Button, Container, ListGroup } from "react-bootstrap";
 import SingoloFilmAdmin from "./SingoloFilmAdmin";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FaPlus } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddFilmModal from "./AddFilmModal";
 import EditFilmModal from "./EditFilmModal";
+import { getFilmsAction } from "../redux/actions";
 
 const AdminPage = () => {
+  const url = `http://localhost:3001/films`;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getFilmsAction(url));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const films = useSelector(state => state.home.films);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
