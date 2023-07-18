@@ -64,6 +64,9 @@ const Detail = () => {
       {film !== null && (
         <>
           <iframe
+            data-aos="zoom-out"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
             className="mb-5"
             width="100%"
             height="500"
@@ -77,6 +80,10 @@ const Detail = () => {
             <Col md={8} className="order-2 order-md-1">
               <Row className="justify-content-center gy-5">
                 <Col
+                  data-aos="zoom-out"
+                  data-aos-duration="500"
+                  data-aos-easing="ease-in-out"
+                  data-aos-delay="500"
                   md={10}
                   className="text-center border border-1 rounded-3 card-film-dettaglio position-relative"
                   style={{ maxWidth: "96%" }}
@@ -121,12 +128,25 @@ const Detail = () => {
                     </Button>
                   )}
                 </Col>
-                <Col md={10}>
+                <Col
+                  data-aos="zoom-out"
+                  data-aos-duration="500"
+                  data-aos-easing="ease-in-out"
+                  data-aos-delay="500"
+                  md={10}
+                >
                   <CommentArea params={params.idFilm} />
                 </Col>
               </Row>
             </Col>
-            <Col md={4} className="order-1 order-md-2 d-flex justify-content-center">
+            <Col
+              data-aos="zoom-out"
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="500"
+              md={4}
+              className="order-1 order-md-2 d-flex justify-content-center"
+            >
               <div style={{ maxWidth: "400px" }}>
                 <img
                   src={film.urlCopertina}

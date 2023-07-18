@@ -17,7 +17,13 @@ const ListFilm = () => {
   const films = useSelector(state => state.home.films);
   const user = useSelector(state => state.home.user);
   return (
-    <Container className="my-4">
+    <Container
+      data-aos="zoom-out"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-delay="800"
+      className="my-4"
+    >
       {user !== null ? (
         <>
           <Form onSubmit={e => e.preventDefault()}>

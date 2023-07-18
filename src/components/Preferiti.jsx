@@ -15,11 +15,17 @@ const Preferiti = () => {
 
   const preferiti = useSelector(state => state.home.preferiti);
   return (
-    <Container className="my-4">
+    <Container data-aos="zoom-out" data-aos-duration="500" data-aos-easing="ease-in-out" className="my-4">
       {preferiti.length > 0 ? (
         <>
           <p className="display-3 text-white">I tuoi preferiti:</p>
-          <Row className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3">
+          <Row
+            data-aos="zoom-out"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="500"
+            className="row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-3"
+          >
             <>
               {preferiti.map(film => (
                 <Col key={film.id}>

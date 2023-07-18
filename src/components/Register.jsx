@@ -42,11 +42,22 @@ const Register = () => {
   };
   return (
     <>
-      <div className="text-center text-light mt-5 mb-3 fs-3">
+      <div
+        data-aos="zoom-out"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        className="text-center text-light mt-5 mb-3 fs-3"
+      >
         <img className="me-1" width="30px" height="30px" src={logo} alt="logo" />
         FilmVerse
       </div>
-      <Container className="text-light d-flex justify-content-center align-items-center">
+      <Container
+        data-aos="zoom-out"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="500"
+        className="text-light d-flex justify-content-center align-items-center"
+      >
         <Form className=" rounded p-5 form-register" onSubmit={sendRegister}>
           <p className="text-center text-light fs-5">Registrati a FilmVerse</p>
           <Form.Group className="mb-3">

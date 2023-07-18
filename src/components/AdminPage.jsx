@@ -25,7 +25,7 @@ const AdminPage = () => {
   const handleShowEdit = () => setShowEdit(true);
 
   return (
-    <Container className="my-4">
+    <Container data-aos="zoom-out" data-aos-duration="500" data-aos-easing="ease-in-out" className="my-4">
       <div className="d-flex justify-content-between align-items-baseline ">
         <p className="display-3 text-light">Gestione Film: </p>
         <Button
@@ -39,7 +39,14 @@ const AdminPage = () => {
         <AddFilmModal show={show} handleClose={handleClose} />
         <EditFilmModal showEdit={showEdit} handleCloseEdit={handleCloseEdit} />
       </div>
-      <ListGroup className="mt-3" style={{ boxShadow: "0px 0px 13px 0px #ffffff" }}>
+      <ListGroup
+        data-aos="zoom-out"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-delay="500"
+        className="mt-3"
+        style={{ boxShadow: "0px 0px 13px 0px #ffffff" }}
+      >
         {films.map(film => (
           <ListGroup.Item key={film.id} className="bg-black text-white">
             <SingoloFilmAdmin film={film} handleShowEdit={handleShowEdit} />
