@@ -5,7 +5,7 @@ import { getFilmsAction } from "../redux/actions";
 
 const AddFilmModal = ({ show, handleClose }) => {
   const dispatch = useDispatch();
-  const url = `http://localhost:3001/films`;
+  const url = `http://192.168.1.9:3001/films`;
   const [film, setFilm] = useState({
     nome: "",
     urlCopertina: "",

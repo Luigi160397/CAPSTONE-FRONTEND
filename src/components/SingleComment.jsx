@@ -7,8 +7,8 @@ import { FaPen } from "react-icons/fa";
 
 const SingleComment = ({ comment, params }) => {
   const user = useSelector(state => state.home.user);
-  const url1 = `http://localhost:3001/commenti/${params}/${comment.id}`;
-  const url2 = `http://localhost:3001/commenti/${params}`;
+  const url1 = `http://192.168.1.9:3001/commenti/${params}/${comment.id}`;
+  const url2 = `http://192.168.1.9:3001/commenti/${params}`;
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
   const [editedContent, setEditedContent] = useState(comment.contenuto);
