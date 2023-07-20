@@ -7,7 +7,7 @@ import { getFilmsAction } from "../redux/actions";
 const ListFilm = () => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState("");
-  const url = `http://192.168.1.9:3001/films?nome=${query}`;
+  const url = `http://localhost:3001/films?nome=${query}`;
 
   useEffect(() => {
     dispatch(getFilmsAction(url));

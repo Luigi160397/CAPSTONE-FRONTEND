@@ -8,7 +8,7 @@ const CommentArea = ({ params }) => {
   const [commento, setCommento] = useState({
     contenuto: ""
   });
-  const url = `http://192.168.1.9:3001/commenti/${params}`;
+  const url = `http://localhost:3001/commenti/${params}`;
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
   useEffect(() => {

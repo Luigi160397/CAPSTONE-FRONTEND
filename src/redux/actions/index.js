@@ -31,7 +31,7 @@ export const getFilmsAction = url => {
 
 export const getUserLoggedAction = () => {
   const token = localStorage.getItem("token");
-  const url = "http://192.168.1.9:3001/users/me";
+  const url = "http://localhost:3001/users/me";
   return async dispatch => {
     try {
       let resp = await fetch(url, {
@@ -94,7 +94,7 @@ export const getCommentiAction = url => {
 
 export const getPreferitiAction = () => {
   const token = localStorage.getItem("token");
-  const url = "http://192.168.1.9:3001/users/me/preferiti";
+  const url = "http://localhost:3001/users/me/preferiti";
   return async dispatch => {
     try {
       let resp = await fetch(url, {
