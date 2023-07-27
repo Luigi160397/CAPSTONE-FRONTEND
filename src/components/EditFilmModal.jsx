@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilmsAction } from "../redux/actions";
+import { MdDoneOutline } from "react-icons/md";
+import { GrCircleAlert } from "react-icons/gr";
 
-const EditFilmModal = ({ showEdit, handleCloseEdit }) => {
+const EditFilmModal = ({ showEdit, handleCloseEdit, handleShowToast }) => {
   const dispatch = useDispatch();
 
   const [film, setFilm] = useState(null);
@@ -39,10 +41,12 @@ const EditFilmModal = ({ showEdit, handleCloseEdit }) => {
       });
       if (response.ok) {
         dispatch(getFilmsAction(`http://localhost:3001/films`));
+        handleShowToast("Film modificato", <MdDoneOutline />);
         handleCloseEdit();
       }
     } catch (error) {
       alert(error);
+      handleShowToast("Errore nella modifica!", <GrCircleAlert />);
     }
   };
 

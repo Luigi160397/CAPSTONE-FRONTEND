@@ -89,3 +89,7 @@ body {
 .dropdown-menu {
   left: -110% !important;
 }
+
+.custom-toast-header {
+  background-color: #2125298f;
+}

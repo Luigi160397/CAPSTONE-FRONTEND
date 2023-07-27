@@ -4,8 +4,10 @@ import { FaPen } from "react-icons/fa";
 import { ImBin } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import { getFilmDaModificareAction, getFilmsAction } from "../redux/actions";
+import { MdDoneOutline } from "react-icons/md";
+import { GrCircleAlert } from "react-icons/gr";
 
-const SingoloFilmAdmin = ({ film, handleShowEdit }) => {
+const SingoloFilmAdmin = ({ film, handleShowEdit, handleShowToast }) => {
   const dispatch = useDispatch();
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
@@ -21,9 +23,11 @@ const SingoloFilmAdmin = ({ film, handleShowEdit }) => {
       });
       if (response.ok) {
         dispatch(getFilmsAction(`http://localhost:3001/films`));
+        handleShowToast("Film eliminato", <MdDoneOutline />);
       }
     } catch (error) {
       alert(error);
+      handleShowToast("Errore nell'eliminazione!", <GrCircleAlert />);
     }
   };
 

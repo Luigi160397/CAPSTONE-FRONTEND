@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { getFilmsAction } from "../redux/actions";
+import { MdDoneOutline } from "react-icons/md";
+import { GrCircleAlert } from "react-icons/gr";
 
-const AddFilmModal = ({ show, handleClose }) => {
+const AddFilmModal = ({ show, handleClose, handleShowToast }) => {
   const dispatch = useDispatch();
   const url = `http://localhost:3001/films`;
   const [film, setFilm] = useState({
@@ -42,10 +44,12 @@ const AddFilmModal = ({ show, handleClose }) => {
           urlTrailer: ""
         });
         dispatch(getFilmsAction(url));
+        handleShowToast("Film Aggiunto ", <MdDoneOutline />);
         handleClose();
       }
     } catch (error) {
       alert(error);
+      handleShowToast("Errore nell'aggiunta!", <GrCircleAlert />);
     }
   };
   return (
