@@ -39,7 +39,7 @@ const AdminPage = () => {
   const handleShowEdit = () => setShowEdit(true);
 
   return (
-    <div className="position-relative" aria-live="polite" aria-atomic="true">
+    <div className="position-relative container-admin" aria-live="polite" aria-atomic="true">
       {showToast && (
         <ToastContainer
           className="p-3"
@@ -48,6 +48,10 @@ const AdminPage = () => {
         >
           <Toast
             onClose={handleHideToast}
+            data-aos="zoom-out"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-anchor=".container-admin"
             show={showToast}
             delay={10000}
             autohide
