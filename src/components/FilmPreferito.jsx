@@ -6,7 +6,7 @@ import { getPreferitiAction } from "../redux/actions";
 
 const FilmPreferito = ({ film }) => {
   const navigate = useNavigate();
-  const url = `http://localhost:3001/users/me/preferiti/${film.id}`;
+  const url = `http://192.168.1.9:3001/users/me/preferiti/${film.id}`;
   const dispatch = useDispatch();
 
   const handleDelete = async () => {

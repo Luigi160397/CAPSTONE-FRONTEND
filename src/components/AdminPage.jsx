@@ -22,7 +22,7 @@ const AdminPage = () => {
   const handleHideToast = () => {
     setShowToast(false);
   };
-  const url = `http://localhost:3001/films`;
+  const url = `http://192.168.1.9:3001/films`;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getFilmsAction(url));

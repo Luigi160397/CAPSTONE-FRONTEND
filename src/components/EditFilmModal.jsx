@@ -31,7 +31,7 @@ const EditFilmModal = ({ showEdit, handleCloseEdit, handleShowToast }) => {
 
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:3001/films/${movie.id}`, {
+      const response = await fetch(`http://192.168.1.9:3001/films/${movie.id}`, {
         method: "PUT",
         body: JSON.stringify(film),
         headers: {
@@ -40,7 +40,7 @@ const EditFilmModal = ({ showEdit, handleCloseEdit, handleShowToast }) => {
         }
       });
       if (response.ok) {
-        dispatch(getFilmsAction(`http://localhost:3001/films`));
+        dispatch(getFilmsAction(`http://192.168.1.9:3001/films`));
         handleShowToast("Film modificato", <MdDoneOutline />);
         handleCloseEdit();
       }
