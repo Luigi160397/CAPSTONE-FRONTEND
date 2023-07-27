@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getUserLoggedAction());
-    dispatch(getFilmsAction("http://192.168.1.9:3001/films"));
+    dispatch(getFilmsAction("http://localhost:3001/films"));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

@@ -18,7 +18,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://192.168.1.9:3001/auth/register`, {
+      const response = await fetch(`http://localhost:3001/auth/register`, {
         method: "POST",
         body: JSON.stringify(register),
         headers: {

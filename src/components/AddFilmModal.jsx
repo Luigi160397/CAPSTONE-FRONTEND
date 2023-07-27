@@ -7,7 +7,7 @@ import { GrCircleAlert } from "react-icons/gr";
 
 const AddFilmModal = ({ show, handleClose, handleShowToast }) => {
   const dispatch = useDispatch();
-  const url = `http://192.168.1.9:3001/films`;
+  const url = `http://localhost:3001/films`;
   const [film, setFilm] = useState({
     nome: "",
     urlCopertina: "",

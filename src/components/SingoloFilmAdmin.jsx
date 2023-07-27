@@ -15,14 +15,14 @@ const SingoloFilmAdmin = ({ film, handleShowEdit, handleShowToast }) => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://192.168.1.9:3001/films/${film.id}`, {
+      const response = await fetch(`http://localhost:3001/films/${film.id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
       if (response.ok) {
-        dispatch(getFilmsAction(`http://192.168.1.9:3001/films`));
+        dispatch(getFilmsAction(`http://localhost:3001/films`));
         handleShowToast("Film eliminato", <MdDoneOutline />);
       }
     } catch (error) {

@@ -7,8 +7,8 @@ import { FaPen } from "react-icons/fa";
 
 const SingleComment = ({ comment, params }) => {
   const user = useSelector(state => state.home.user);
-  const url1 = `http://192.168.1.9:3001/commenti/${params}/${comment.id}`;
-  const url2 = `http://192.168.1.9:3001/commenti/${params}`;
+  const url1 = `http://localhost:3001/commenti/${params}/${comment.id}`;
+  const url2 = `http://localhost:3001/commenti/${params}`;
   const dispatch = useDispatch();
   const [editMode, setEditMode] = useState(false);
   const [editedContent, setEditedContent] = useState(comment.contenuto);
@@ -96,25 +96,15 @@ const SingleComment = ({ comment, params }) => {
           })}
         {user !== null && user.id !== null && user.id === comment.user.id && (
           <>
-            <Button
-              type="button"
-              variant="danger"
-              className="text-white ms-3 btn-sm"
-              onClick={handleShowConfirmationModal}
-            >
+            <Button type="button" variant="danger" className="text-white ms-3" onClick={handleShowConfirmationModal}>
               <ImBin />
             </Button>
             {editMode ? (
-              <Button type="button" variant="outline-secondary btn-sm" className="ms-3" onClick={handleEdit}>
+              <Button type="button" variant="outline-secondary" className="ms-3" onClick={handleEdit}>
                 Save
               </Button>
             ) : (
-              <Button
-                type="button"
-                variant="outline-secondary btn-sm"
-                className="ms-3"
-                onClick={() => setEditMode(true)}
-              >
+              <Button type="button" variant="outline-secondary" className="ms-3" onClick={() => setEditMode(true)}>
                 <FaPen />
               </Button>
             )}

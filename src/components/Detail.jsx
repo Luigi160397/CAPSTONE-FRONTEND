@@ -11,7 +11,7 @@ const Detail = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const url = `http://192.168.1.9:3001/films/${params.idFilm}`;
+    const url = `http://localhost:3001/films/${params.idFilm}`;
     dispatch(getDettagioAction(url));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +27,7 @@ const Detail = () => {
   const token = localStorage.getItem("token");
   const addPreferito = async () => {
     try {
-      const response = await fetch(`http://192.168.1.9:3001/users/me/preferiti`, {
+      const response = await fetch(`http://localhost:3001/users/me/preferiti`, {
         method: "POST",
         body: JSON.stringify(filmPref),
         headers: {
@@ -45,7 +45,7 @@ const Detail = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://192.168.1.9:3001/users/me/preferiti/${film.id}`, {
+      const response = await fetch(`http://localhost:3001/users/me/preferiti/${film.id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
