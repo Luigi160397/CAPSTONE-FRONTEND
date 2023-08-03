@@ -4,8 +4,10 @@ import { ImBin } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
 import { getCommentiAction } from "../redux/actions";
 import { FaPen } from "react-icons/fa";
+import { MdDoneOutline } from "react-icons/md";
+import { GrCircleAlert } from "react-icons/gr";
 
-const SingleComment = ({ comment, params }) => {
+const SingleComment = ({ comment, params, handleShowToast }) => {
   const user = useSelector(state => state.home.user);
   const url1 = `http://localhost:3001/commenti/${params}/${comment.id}`;
   const url2 = `http://localhost:3001/commenti/${params}`;
@@ -26,9 +28,11 @@ const SingleComment = ({ comment, params }) => {
       });
       if (response.ok) {
         dispatch(getCommentiAction(url2));
+        handleShowToast("Commento eliminato!", <MdDoneOutline />);
       }
     } catch (error) {
       alert(error);
+      handleShowToast("Errore nell'eliminazione!", <GrCircleAlert />);
     }
   };
 
